@@ -1,0 +1,37 @@
+body {
+  color: white;
+  background-image: url("http://wall.rimbuz.com/wp-content/uploads/Rain-Blue-Widescreen-HD-Wallpapers.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+td,
+th {
+  padding: 15px;
+  background-color: rgba(10, 10, 10, 0.7);
+}
+#top-20 td {
+}
+td span {
+  font-size: 16px;
+  color: orange;
+}
+.container-fluid {
+  padding-bottom: 10px;
+  background-color: transparent;
+}
+.head {
+  background-color: gold;
+  padding: 30px;
+  color: black;
+}
+@media screen and (min-width: 458px) {
+  td span {
+    font-size: 25px;
+    color: orange;
+  }
+  td,
+  th {
+    padding: 25px;
+    background-color: rgba(10, 10, 10, 0.7);
+  }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"> 	
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
+  <title>memory game</title>
+
+</head>
+
+<body>
+
+  <div class="container-fluid body pb-5">
+
+    <h3 class="p-3 text-center"> Memory Game </h3>
+
+    <div>
+    	<div class="mx-auto text-center">
+    		<a class="btn btn-success mt-2" role ="button" href="leaderboard.html">Visit Leaderboard</a>
+    	</div>	
+      <div class="container  ">
+         <!-- move ,rating and time section-->
+        <div class="row">
+          <div class="col m-2  " id="star-rate">
+            <p class="star">star Rating
+              <br>
+       
+              <span class="fa r2 fa-star checked"></span>
+              <span class="fa r3 fa-star checked"></span>
+              <span class="fa r4 fa-star checked"></span>
+              <span class="fa r5 fa-star checked"></span>
+
+            </p>
+          </div>
+          <div class="col m-2 p-1 ml-3 ">
+            <p class="move">Moves</p>
+          </div>
+          <div class="col m-2 p-1 ml-3 ">
+            <p class="time ">time</p>
+          </div>
+          <div class="col m-2  "><button class="btn hid  float-right restart btn-primary"> Restart </button>
+          </div>
+        </div>
+        <p class="btn btn-primary play pl-3 pr-3 pt-1 pb-1 text-center"> Play</p>
+      </div>
+     <!-- playground-->
+      <div class="container  cont ">
+
+        <div class="card" id="1">
+
+        </div>
+        <div class="card" id="2">
+
+        </div>
+        <div class="card" id="3">
+
+        </div>
+        <div class="card" id="4">
+
+        </div>
+      </div>
+      <div class="container cont	">
+
+        <div class="card" id="5">
+
+        </div>
+        <div class="card" id="6">
+
+        </div>
+        <div class="card" id="7">
+
+        </div>
+        <div class="card" id="8">
+
+        </div>
+      </div>
+      <div class="container cont">
+        <div class="card" id="9">
+
+        </div>
+        <div class="card" id="10">
+
+        </div>
+        <div class="card" id="11">
+
+        </div>
+        <div class="card" id="12">
+
+        </div>
+      </div>
+      <div class="container cont">
+        <div class="card" id="13">
+
+        </div>
+        <div class="card" id="14">
+
+        </div>
+        <div class="card" id="15">
+
+        </div>
+        <div class="card" id="16">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--winner modal-->
+  <div class="container">
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <img src="images/i9.png" alt="no-img" class="img-fluid mx-auto">
+
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <h4 class="blue-text">Congratulations!!! great work </h4>
+            <p> You have taken
+              <p class="move"></p> moves and
+              <p class="time"></p> to win the game and your rating is <span class="fa r2 fa-star checked"></span>
+              <span class="fa r3 fa-star checked"></span>
+              <span class="fa r4 fa-star checked"></span>
+              <span class="fa r5 fa-star checked"></span> 
+            <button class="btn Submitt_score  btn-success"> Submitt score</button>
+            <br>
+            <div id="username" class="mt-2 username">
+              <form id="form" action="leaderboard.html">
+                <label><strong> Player Name</strong> </label>
+                <input id="name" type="text" required>
+                <input type="submit">
+              </form>
+            </div>
+
+            <button class="btn float-right restart btn-primary"> Play Again </button>
+
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn  btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+
+
+</html>

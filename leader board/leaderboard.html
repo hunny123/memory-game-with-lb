@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/lb.css">
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="container ">
+    <h2 class="text-center head ">The Leader Board </h2>
+    <div class="mx-auto text-center">
+    		<a class="btn btn-success mt-2" role ="button" href="index.html">Play Game</a>
+    </div>	
+    <div class="row">
+      <div class="col-lg-6 mt-2  " id="top-20">
+        <h3 class="pl-2">
+          Top 5 Player</h3>
+        <div class="container-fluid">
+          <table class=" table-bordered">
+            <tr>
+              <th>Score</th>
+              <th>Player Name</th>
+              <th>Star</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-2  " id="Recent-player">
+        <h3 class="pl-2">
+          Recent Player</h3>
+        <div class="container-fluid">
+          <table class=" table-bordered">
+            <tr>
+              <th>Score</th>
+              <th>Player Name</th>
+              <th>Star</th>
+            </tr>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      let arr = [];
+      $.getJSON('https://leader-board-7e707.firebaseio.com/.json', function(a) {// firebase api call
+        for (var key in a) {
+          arr.push(a[key]);
+        }
+        for (let i = arr.length - 1; i > -1; i--) {
+          let k = ""
+          for (j = 0; j < arr[i].star; j++) {
+            k = k + " &#9733";
+          }
+          $("#Recent-player table").append(`<tr><td> ${arr[i].rating.toFixed(3)}</td><td> ${arr[i].Name}</td><td><span>${k}</span></td></tr>`);// visualising data
+        }
+        console.log(arr.sort(compare));
+        for (let i = 0; i < 5; i++) {
+          let k = "";
+          for (j = 0; j < arr[i].star; j++) {
+            k = k + " &#9733";
+          }
+          $("#top-20 table").append(`<tr><td> ${arr[i].rating.toFixed(3)}</td><td> ${arr[i].Name}</td><td><span>${k}</span></td></tr>`);
+        }
+        // sorting object with property rating
+        function compare(a, b) {
+          const genreA = a.rating;
+          const genreB = b.rating;
+          let comparison = 0;
+          if (genreA < genreB) {
+            comparison = 1;
+          } else if (genreA > genreB) {
+            comparison = -1;
+          }
+          return comparison;
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
