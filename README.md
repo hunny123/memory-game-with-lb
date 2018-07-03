@@ -28,6 +28,10 @@ Leader board is place where player can see the score and stars of another ,divid
 # Boundary Conditions
 * 500 milisecond is consider in human reaction time.When things got way faster then 500 miliseconds ,program will break.
 * It is without  authentication system so names of player can be repeated.
+# Dependencies
+* [Awesome Font](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css)
+* [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js)
+* [firebase.js](https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js)
 # End
 The link to game https://hunny123.github.io/memory-game-with-lb/leader%20board/index.html
 
