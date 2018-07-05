@@ -2,7 +2,9 @@ $(document).ready(function() {
 	// initialising the variable.
   let status = "off";
   let b;
+
   const starcount = 0;
+  let move =0;
   let count = 0;
   let time = 0;
   let interval;
@@ -21,9 +23,9 @@ $(document).ready(function() {
     interval = setInterval(function() {
       $(".time").text(time + " seconds");
       time++;
-      ratefunction();//for change in time changing stars
+      starfunction();//for change in time changing stars
     }, 1000);
-    $(".move").text(count);
+    $(".move").text(move);
     $(".play").hide();
   });
   // onclick event on card 
@@ -43,12 +45,14 @@ $(document).ready(function() {
 
       if (count % 2 == 0) {// condition for whether player open the card  
         evenfunction(id);
+
       } else {             // condition for whether player trying to match the card  
         oddfunction(id);
+        move++;// move calculated
       }
-      count++;            // increment in count for move
-      $(".move").text(count);
-      ratefunction(count);
+        count++;       // counter for checking the movement of user
+      $(".move").text(move);
+      starfunction(move);
     } else {
       console.log("do nothing");
     }
@@ -59,7 +63,7 @@ $(document).ready(function() {
   function evenfunction(id) { // even function body
     imgsrc = $("#" + id + " img").attr("src");
     console.log("this is even function call " + count + imgsrc);
-    idmatch.push(id);
+    idmatch.push(id);// push id of card for match
   }
   function oddfunction(id) { // odd function body
     console.log("odd call" + $("#" + id + " img").attr("src"));
@@ -92,6 +96,7 @@ $(document).ready(function() {
 
         idmatch = [];
       }, 500);
+
     }
   }
 
@@ -123,13 +128,13 @@ $(document).ready(function() {
 
   	//reset the everthing  to initial conditions
     status = "off";
-
+    move = 0;
     count = 0;
     time = 0;
     clearInterval(interval);
     $("#myModal").modal("hide");
     $(".time").text("time");
-    $(".move").text(count);
+    $(".move").text(move);
     $(".play").show();
     $(".restart").hide();
     $("span").addClass("checked");
@@ -146,13 +151,13 @@ $(document).ready(function() {
   function winnerfound() {
     $("#myModal").modal();//showing modal box when player wins
   }
-  function ratefunction(count) {// rate function body for calculating star
-    if ((count > 30 && count < 36) || time > 50) {
-      $(".r5").removeClass("checked");
-    } else if ((count > 35 && count < 45) || time > 120) {
+  function starfunction(count) {// rate function body for calculating star
+    if ((move > 15& move <19 ) || time > 50) {
       $(".r4").removeClass("checked");
-    } else if (count > 44 || time > 240) {
+    } else if ((move > 18 && move < 25) || time > 120) {
       $(".r3").removeClass("checked");
+    } else if (move > 24 || time > 240) {
+      $(".r2").removeClass("checked");
     } else {
       console.log("same rate");
     }
@@ -170,7 +175,7 @@ $(document).ready(function() {
 
     const score = star * 500 -  (time / 60);
 
-    writeNewPost(count, star, score);
+    writeNewPost(move, star, score);
   }
   function getstar() {
     let star = 0;

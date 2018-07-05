@@ -7,17 +7,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
   <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
 
   <!-- Popper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" async></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" async></script>
   <script src="scripts/main.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js" ></script>
+  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js" ></script>
   <title>memory game</title>
 
 </head>
@@ -39,10 +39,10 @@
             <p class="star">star Rating
               <br>
        
+              <span class="fa r1 fa-star checked"></span>
               <span class="fa r2 fa-star checked"></span>
               <span class="fa r3 fa-star checked"></span>
               <span class="fa r4 fa-star checked"></span>
-              <span class="fa r5 fa-star checked"></span>
 
             </p>
           </div>
@@ -139,17 +139,18 @@
             <h4 class="blue-text">Congratulations!!! great work </h4>
             <p> You have taken
               <p class="move"></p> moves and
-              <p class="time"></p> to win the game and your rating is <span class="fa r2 fa-star checked"></span>
+              <p class="time"></p> to win the game and your rating is <span class="fa r1 fa-star checked"></span>
+              <span class="fa r2 fa-star checked"></span>
               <span class="fa r3 fa-star checked"></span>
-              <span class="fa r4 fa-star checked"></span>
-              <span class="fa r5 fa-star checked"></span> 
-            <button class="btn Submitt_score  btn-success"> Submitt score</button>
+              <span class="fa r4 fa-star checked"></span> 
+              <br>
+            <button class="btn Submitt_score   btn-success"> Submitt score</button>
             <br>
             <div id="username" class="mt-2 username">
               <form id="form" action="leaderboard.html">
                 <label><strong> Player Name</strong> </label>
                 <input id="name" type="text" required>
-                <input type="submit">
+                <input type="submit" class="btn btn-success">
               </form>
             </div>
 

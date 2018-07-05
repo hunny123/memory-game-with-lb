@@ -5,12 +5,11 @@ It is a memory based game.In this there are 16 cards ,each card has one image on
 * Match the cards according to image on it.
 # How moves,stars and score is calculated?
    ## Moves:- 
-   One flip of card is equal to one move. Same rule is followed in case of card matched.
-   ## Stars:
+   One paired (matched or unmatched) of card is equal to one move.
    Star are initially set to 4 then when play crossed the move 30 or time 50 seconds.
    They are calculated as follow :-
-   * if move > 30 and move < 36 or time > 50 seconds then 3 stars.
-   * if move > 35 and move < 45 or time > 120 seconds then 2 stars.
+   * if move > 15 and move < 19 or time > 50 seconds then 3 stars.
+   * if move > 18 and move < 25 or time > 120 seconds then 2 stars.
    * for rest cases given 1 star.
                                    
    ## Score:
@@ -28,6 +27,10 @@ Leader board is place where player can see the score and stars of another ,divid
 # Boundary Conditions
 * 500 milisecond is consider in human reaction time.When things got way faster then 500 miliseconds ,program will break.
 * It is without  authentication system so names of player can be repeated.
+# Dependencies
+* [Awesome Font](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css)
+* [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js)
+* [firebase.js](https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js)
 # End
 The link to game https://hunny123.github.io/memory-game-with-lb/leader%20board/index.html
 
